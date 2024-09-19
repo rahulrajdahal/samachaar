@@ -48,8 +48,4 @@ const stories = reactive([{
 {
     id: 4, title: 'My Pilgrimage to the birthplace of Buddha', image: "https://imgs.search.brave.com/HhT7QzSjjTQCF0htolOpYsFVrINfX2bse-w-66Rbxiw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8x/LzE4L0JSUF9MdW1i/aW5pX01heWFkZXZp/X3RlbXBsZS5qcGc"
 },])
-
-
 </script>
-
-<style lang="scss" scoped></style>
