@@ -1,0 +1,16 @@
+<template>
+  <HomeHeader />
+
+  <div class="bg-gray-100 py-24">
+    <Services />
+    <Stories />
+  </div>
+  <WhyVisit />
+</template>
+
+<script setup lang="ts">
+import HomeHeader from './HomeHeader.vue';
+import Services from './Services.vue';
+import Stories from './Stories.vue';
+import WhyVisit from './WhyVisit.vue';
+</script>
