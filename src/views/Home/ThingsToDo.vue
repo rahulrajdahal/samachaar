@@ -1,5 +1,5 @@
 <template>
-    <div :style="activeBackground" class="px-[12.5%] py-14 flex justify-between items-center">
+    <div :style="activeBackground" class="px-[12.5%] py-14 relative flex justify-between items-center">
         <div class="flex flex-col items-center">
             <strong class="text-white text-2xl font-bold"> Things to do in Nepal </strong>
             <ul class="flex flex-col items-center gap-2 mt-4">
@@ -10,6 +10,9 @@
                 </li>
             </ul>
         </div>
+
+        <strong class="text-7xl text-gray-600 absolute top-36 left-[28rem]">{{ activeThing.title }}</strong>
+
         <div class="flex flex-col gap-8 justify-between h-full">
             <ul class="flex flex-col items-center mt-12 gap-4">
                 <li v-for="({ id }) in thingsToDo" :key="id" @click="handleClick(id)"
