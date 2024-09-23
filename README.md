@@ -1,64 +1,75 @@
-# samachaar
+# samachaar. Catchup with the news
 
-This template should help get you started developing with Vue 3 in Vite.
+Read recent news articles in Nepal.
 
-## Recommended IDE Setup
+- Latest news articles.
+- Latest stories from Nepal.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Preview
 
-## Type Support for `.vue` Imports in TS
+![Samachaar](./screenshots/samachaar.png)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 🏗 Development Guide
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### 1. clone the repository
 
 ```sh
-bun install
+git clone https://github.com/rahulrajdahal/samachaar.git
 ```
 
-### Compile and Hot-Reload for Development
+### 2. Install Dependencies
+
+#### npm
 
 ```sh
-bun dev
+cd samachaar && npm install
 ```
 
-### Type-Check, Compile and Minify for Production
+### 3. Run development server
 
 ```sh
-bun build
+npm run dev
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+#### OR
+
+### Run Production server
 
 ```sh
-bun test:unit
+npm run start
 ```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+## 🚀 Project Structure
 
-```sh
-# Install browsers for the first run
-npx playwright install
+Inside of project Samachaar, you'll see the following folders and files:
 
-# When testing on CI, must build the project first
-bun build
-
-# Runs the end-to-end tests
-bun test:e2e
-# Runs the tests only on Chromium
-bun test:e2e --project=chromium
-# Runs the tests of a specific file
-bun test:e2e tests/example.spec.ts
-# Runs the tests in debug mode
-bun test:e2e --debug
+```text
+/
+├── public/
+│   └── favicon.ico
+├── src/
+|   ├── components/
+│   │   └── component.vue
+│   ├── router
+|   |   └── index.ts
+│   ├── views
+|   |   └── Page
+|   |       └── PageView.vue
+├── App.vue
+└── package.json
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## 🧞 Commands
 
-```sh
-bun lint
-```
+All commands are run from the root of the project, from a terminal:
+
+| Command             | Action                                        |
+| :------------------ | :-------------------------------------------- |
+| `npm install`       | Installs dependencies.                        |
+| `npm run dev`       | Starts local dev server at `localhost:5173`.  |
+| `npm run build`     | Build your production site to `./next/`.      |
+| `npm run preview`   | Preview your build locally, before deploying. |
+| `npm run test:unit` | Run unit tests with vitest.                   |
+| `npm run test:e2e`  | Run Playwright E2E test.                      |
+| `npm run lint`      | Check all linting errors.                     |
+| `npm run format`    | Format src files with prettier settings.      |
