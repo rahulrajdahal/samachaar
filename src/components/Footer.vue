@@ -7,7 +7,7 @@
       <div class="flex flex-col gap-2">
         <strong class="text-gray-800 text-lg uppercase font-bold">Quick Links</strong>
         <div class="flex flex-col gap-1">
-          <RouterLink v-for="({ id, link }) in quickLinks" :key="id" :to="link"
+          <RouterLink v-for="({ id, link, to }) in quickLinks" :key="id" :to="to"
             class="text-gray-500 font-medium text-base">{{ link }}</RouterLink>
         </div>
 
