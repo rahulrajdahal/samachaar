@@ -27,7 +27,7 @@ import { reactive } from 'vue';
 
 const links = reactive([{ id: 1, title: "Home", to: "/", active: true },
 { id: 2, title: "Stories", to: "/stories", active: false },
-{ id: 3, title: "news", to: "/news", active: false }
+{ id: 3, title: "News", to: "/news", active: false }
 ])
 
 function getActiveLink(link) {
