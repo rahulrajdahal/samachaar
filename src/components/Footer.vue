@@ -36,6 +36,11 @@
         </form>
 
         <strong class="text-lg text-gray-800 uppercase font-bold">SOCIAL MEDIA</strong>
+        <ul class="flex items-center gap-4">
+          <li v-for="({ id, link }) in socialLinks" :key="id">
+            <component :is="link" class="w-10" />
+          </li>
+        </ul>
 
       </div>
     </div>
@@ -48,6 +53,8 @@
 </template>
 
 <script lang="ts" setup>
+import { Square11B, Square12B, Square13B } from 'meistericons-vue-latest';
+
 const quickLinks = [{ id: 1, link: 'Home' },
 { id: 2, link: 'Stories' },
 { id: 3, link: 'News' },
@@ -60,5 +67,7 @@ const partnerLinks = [{ id: 1, link: 'Partner1' },
 { id: 3, link: 'Partner3' },
 { id: 4, link: 'Partner4' },
 ]
+
+const socialLinks = [{ id: 1, link: Square11B }, { id: 2, link: Square12B }, { id: 3, link: Square13B },]
 
 </script>

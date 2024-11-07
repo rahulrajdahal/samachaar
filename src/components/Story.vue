@@ -1,0 +1,27 @@
+<template>
+    <div class="flex items-center gap-4">
+        <img :src="story.image_url" alt="story" class="aspect-video rounded-md w-40 h-20" />
+        <div class="flex flex-col gap-1">
+            <strong class="font-bold text-xl">{{ story.title }}</strong>
+            <span class="flex text-sm font-normal text-gray-500 items-center gap-12">
+                <p>21st Oct, 2019</p>
+                <span class="flex items-center gap-1">
+                    <ClockCircle class="w-4" />
+                    <p v-if="story?.description && readingTime(story?.description) > 0">{{
+                        readingTime(story?.description)
+                        }} min</p>
+
+                    <p v-else>8 min</p>
+
+                </span>
+            </span>
+        </div>
+    </div>
+</template>
+
+<script lang="ts" setup>
+import { readingTime } from '@/utils';
+import { ClockCircle } from 'meistericons-vue-latest';
+
+defineProps<{ story: { image_url: string, title: string, description?: string } }>()
+</script>
