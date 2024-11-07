@@ -1,6 +1,6 @@
 <template>
-    <div class="flex items-center gap-4">
-        <img :src="story.image_url" alt="story" class="aspect-video rounded-md w-40 h-20" />
+    <div class="flex flex-col md:flex-row md:items-center gap-4">
+        <img :src="story.image_url" alt="story" class="aspect-video rounded-md md:w-40 md:h-20" />
         <div class="flex flex-col gap-1">
             <strong class="font-bold text-xl">{{ story.title }}</strong>
             <span class="flex text-sm font-normal text-gray-500 items-center gap-12">
@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts" setup>
-import { readingTime } from '@/utils';
+import { readingTime, type NewsArticle } from '@/utils';
 import { ClockCircle } from 'meistericons-vue-latest';
 
-defineProps<{ story: { image_url: string, title: string, description?: string } }>()
+defineProps<{ story: NewsArticle }>()
 </script>

@@ -1,26 +1,25 @@
 <template>
   <footer class="pt-12 pb-2">
-    <div class="px-[12.5%] py-2 flex justify-between">
+    <div class="px-4 gap-8 md:px-[12.5%] py-2 flex flex-col md:flex-row justify-between">
 
-      <div>Logo</div>
+      <RouterLink to="/" class="text-xl md:text-3xl font-black">Samachaar</RouterLink>
 
-      <div class="">
+      <div class="flex flex-col gap-2">
         <strong class="text-gray-800 text-lg uppercase font-bold">Quick Links</strong>
-        <ul>
-          <li v-for="({ id, link }) in quickLinks" :key="id">
-            <RouterLink :to="link" class="text-gray-500 font-medium text-base">{{ link }}</RouterLink>
-          </li>
-        </ul>
+        <div class="flex flex-col gap-1">
+          <RouterLink v-for="({ id, link }) in quickLinks" :key="id" :to="link"
+            class="text-gray-500 font-medium text-base">{{ link }}</RouterLink>
+        </div>
 
       </div>
 
-      <div class="">
+      <div class="flex flex-col gap-2">
         <strong class="text-gray-800 text-lg uppercase font-bold">Partner Links</strong>
-        <ul>
-          <li v-for="({ id, link }) in partnerLinks" :key="id">
-            <RouterLink :to="link" class="text-gray-500 font-medium text-base">{{ link }}</RouterLink>
-          </li>
-        </ul>
+
+        <div class="flex flex-col gap-1">
+          <RouterLink v-for="({ id, link }) in partnerLinks" :key="id" to="/"
+            class="text-gray-500 font-medium text-base">{{ link }}</RouterLink>
+        </div>
 
       </div>
       <div class="">
@@ -53,13 +52,15 @@
 </template>
 
 <script lang="ts" setup>
+import { useWindowSize } from '@/hooks/useWindowSize';
 import { Square11B, Square12B, Square13B } from 'meistericons-vue-latest';
+import { RouterLink } from 'vue-router';
 
-const quickLinks = [{ id: 1, link: 'Home' },
-{ id: 2, link: 'Stories' },
-{ id: 3, link: 'News' },
-{ id: 4, link: 'About Us' },
-{ id: 5, link: 'Contact Us' }
+const quickLinks = [{ id: 1, link: 'Home', to: '/' },
+{ id: 2, link: 'Stories', to: '/stories' },
+{ id: 3, link: 'News', to: '/news' },
+{ id: 4, link: 'About Us', to: '/' },
+{ id: 5, link: 'Contact Us', to: '/' }
 ]
 
 const partnerLinks = [{ id: 1, link: 'Partner1' },
@@ -70,4 +71,5 @@ const partnerLinks = [{ id: 1, link: 'Partner1' },
 
 const socialLinks = [{ id: 1, link: Square11B }, { id: 2, link: Square12B }, { id: 3, link: Square13B },]
 
+const { width } = useWindowSize()
 </script>
