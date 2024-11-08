@@ -52,10 +52,16 @@ Inside of project Samachaar, you'll see the following folders and files:
 │   │   └── component.vue
 │   ├── router
 |   |   └── index.ts
+│   ├── store
+|   |   └── store.ts
+│   ├── hooks
+|   |   └── hook.ts
 │   ├── views
 |   |   └── Page
 |   |       └── PageView.vue
 ├── App.vue
+├── api.ts
+├── utils.ts
 └── package.json
 ```
 
