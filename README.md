@@ -8,6 +8,8 @@ Read recent news articles in Nepal.
 ## Preview
 
 ![Samachaar](./screenshots/samachaar.png)
+![Samachaar-Stories](./screenshots/stories.png)
+![Samachaar-News](./screenshots/news.png)
 
 ## 🏗 Development Guide
 
