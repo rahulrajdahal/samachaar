@@ -1,7 +1,7 @@
 <template>
     <ul class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6">
         <li v-for="({ article_id, title, image_url, description }, i) in stories" :key="article_id"
-            :class="{ 'row-span-3 col-span-2': i === 1 && width > 768 }" :style="{
+            :class="{ 'row-span-3 col-span-2': (direction === 'right' ? i === 1 : i === 0) && width > 768 }" :style="{
                 background: `linear-gradient(to bottom, rgba(3, 9, 19, 0.32), rgba(3, 9, 19, 0.32)), url(${image_url}) no-repeat
         center/cover`}" class="rounded-md relative h-full aspect-video min-h-40 w-full">
             <div class="flex gap-0.5 flex-col absolute bottom-2 left-4">
@@ -37,8 +37,9 @@
 <script lang="ts" setup>
 import { useWindowSize } from '@/hooks/useWindowSize';
 import { readingTime } from '@/utils';
+import type { NewsArticle } from '@/stores/news';
 
-const { stories } = defineProps<{ stories: any[] }>()
+const { stories } = defineProps<{ stories: NewsArticle[], direction?: "left" | "right" }>()
 
 const { width } = useWindowSize()
 </script>

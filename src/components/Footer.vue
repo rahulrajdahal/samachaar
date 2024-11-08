@@ -2,12 +2,12 @@
   <footer class="pt-12 pb-2">
     <div class="px-4 gap-8 md:px-[12.5%] py-2 flex flex-col md:flex-row justify-between">
 
-      <RouterLink to="/" class="text-xl md:text-3xl font-black">Samachaar</RouterLink>
+      <router-link @click="scrollToTop" to="/" class="text-xl md:text-3xl font-black">Samachaar</router-link>
 
       <div class="flex flex-col gap-2">
         <strong class="text-gray-800 text-lg uppercase font-bold">Quick Links</strong>
         <div class="flex flex-col gap-1">
-          <RouterLink v-for="({ id, link, to }) in quickLinks" :key="id" :to="to"
+          <RouterLink @click="scrollToTop" v-for="({ id, link, to }) in quickLinks" :key="id" :to="to"
             class="text-gray-500 font-medium text-base">{{ link }}</RouterLink>
         </div>
 
@@ -17,7 +17,7 @@
         <strong class="text-gray-800 text-lg uppercase font-bold">Partner Links</strong>
 
         <div class="flex flex-col gap-1">
-          <RouterLink v-for="({ id, link }) in partnerLinks" :key="id" to="/"
+          <RouterLink @click="scrollToTop" v-for="({ id, link }) in partnerLinks" :key="id" to="/"
             class="text-gray-500 font-medium text-base">{{ link }}</RouterLink>
         </div>
 
@@ -55,6 +55,8 @@
 import { useWindowSize } from '@/hooks/useWindowSize';
 import { Square11B, Square12B, Square13B } from 'meistericons-vue-latest';
 import { RouterLink } from 'vue-router';
+
+const scrollToTop = () => window.scrollTo(0, 0)
 
 const quickLinks = [{ id: 1, link: 'Home', to: '/' },
 { id: 2, link: 'Stories', to: '/stories' },

@@ -2,7 +2,7 @@
     <div class="flex flex-col w-full justify-center px-[12.5%] gap-4 py-12 items-center">
         <strong class="text-2xl font-extrabold text-gray-500">Explore More Stories</strong>
 
-        <div class="grid grid-cols-3 gap-6 place-items-center w-full">
+        <div class="grid md:grid-cols-3 gap-6 place-items-center w-full">
             <ImageContainer :data="stories" />
         </div>
     </div>

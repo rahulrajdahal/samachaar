@@ -1,6 +1,7 @@
 <template>
-    <div class="h-[40rem] w-full relative" :style="activeBackground">
-        <ul class="absolute right-0 top-32 py-10 bg-black bg-opacity-35">
+    <div class="h-80 md:h-[40rem] w-full relative" :style="activeBackground">
+
+        <ul v-if="width > 768" class="absolute right-0 top-32 py-10 bg-black bg-opacity-35">
             <li v-for="({ id, title, image }) in featuredNews" :key="id" @click="getActiveBackground(id)"
                 class="px-8 py-4 w-[45rem] relative flex gap-4 items-center hover:cursor-pointer">
                 <span v-if="activeHeader.id === id" class="h-full bg-white w-1 absolute left-0"></span>
@@ -19,10 +20,11 @@
         </ul>
 
 
-        <div class="flex gap-3 h-full flex-col justify-end ml-24 pb-12">
-            <span class="capitalize px-4 py-2 bg-yellow-600 text-white max-w-max">FEATURED</span>
+        <div class="flex gap-1 md:gap-3 h-full flex-col justify-end ml-6 md:ml-24 pb-4 md:pb-12">
+            <span
+                class="capitalize text-base font-semibold md:text-lg px-2 md:px-4 py-2 bg-yellow-600 text-white max-w-max">FEATURED</span>
 
-            <strong class="text-3xl text-white font-extrabold">{{ activeHeader.title }}</strong>
+            <strong class="text-xl md:text-3xl text-white font-extrabold">{{ activeHeader.title }}</strong>
             <div class="flex gap-8 items-center w-full">
                 <p class="text-gray-200 font-semibold text-base">12th Nov, 2019</p>
                 <span class="flex gap-2 items-center text-gray-200 font-semibold text-base">
@@ -38,6 +40,9 @@
 <script setup lang="ts">
 import { ClockCircle } from 'meistericons-vue-latest';
 import { reactive, ref } from 'vue';
+import { useWindowSize } from '@/hooks/useWindowSize';
+
+const { width } = useWindowSize()
 
 const featuredNews = reactive([{
     id: 1, title: "Top 20 Reasons to Visit Nepal in 2020", image: "https://imgs.search.brave.com/qbYbRgZCz9jR8kGZrlkoloEUVfagSkkpzlc8b0nPAfY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMyLnRyaXBvdG8u/Y29tL21lZGlhL2Zp/bHRlci9ubC9pbWcv/Mzc0MTUwL1RyaXBE/b2N1bWVudC8xNTA4/NTk0NTMzXzFfa2Fu/Y2hlanVuZ2EuanBn/LndlYnA"

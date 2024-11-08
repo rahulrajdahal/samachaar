@@ -2,25 +2,17 @@
 import BackgroundImage from '@/components/BackgroundImage.vue';
 import MoreArticlesContainer from '@/components/MoreArticlesContainer.vue';
 import StoriesGrid from '@/components/StoriesGrid.vue';
-import { useQuery } from '@tanstack/vue-query';
-import { computed } from 'vue';
+import { useNewsStore } from '@/stores/news';
+import { storeToRefs } from 'pinia';
 
-const { data, isLoading } = useQuery({
-  queryKey: ['stories'], queryFn: async () => {
-    const response = await fetch(`${import.meta.env.VITE_NEWS_URL}/latest?apikey=${import.meta.env.VITE_NEWS_API_KEY}&country=np`)
-    const data = await response.json();
-    return data.results;
-  }
-})
+const newsStore = useNewsStore()
+const { featuredStories, isLoading, moreArticles } = storeToRefs(newsStore)
 
-const featuredStories = computed(() => data.value?.slice(0, 4))
-const moreStories = computed(() => data.value?.slice(4, 10))
 </script>
 
 <template>
   <div class="bg-blue-100 px-4 md:px-[12.5%] pt-8 pb-40">
     <span v-if="isLoading">Loading...</span>
-
     <StoriesGrid v-else :stories="featuredStories" />
   </div>
 
@@ -43,5 +35,6 @@ const moreStories = computed(() => data.value?.slice(4, 10))
     </div>
   </div>
 
-  <MoreArticlesContainer title="More Stories" container-class="pt-40" :more-articles="moreStories" />
+  <span v-if="isLoading">Loading...</span>
+  <MoreArticlesContainer v-else title="More Stories" container-class="pt-40" :more-articles="moreArticles" />
 </template>

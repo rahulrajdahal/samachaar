@@ -1,5 +1,6 @@
 <template>
-    <div :style="activeBackground" class="px-[12.5%] py-14 relative flex justify-between items-center">
+    <div :style="activeBackground"
+        class="px-4 md:px-[12.5%] py-14 relative flex flex-col md:flex-row justify-between items-center">
         <div class="flex flex-col items-center">
             <strong class="text-white text-2xl font-bold"> Things to do in Nepal </strong>
             <ul class="flex flex-col items-center gap-2 mt-4">
@@ -11,7 +12,9 @@
             </ul>
         </div>
 
-        <strong class="text-7xl text-gray-600 absolute top-36 left-[28rem]">{{ activeThing.title }}</strong>
+        <strong class="text-4xl md:text-7xl text-gray-600 absolute top-80 md:top-36 left-4 md:left-[30rem]">{{
+            activeThing.title
+            }}</strong>
 
         <div class="flex flex-col gap-8 justify-between h-full">
             <ul class="flex flex-col items-center mt-12 gap-4">
