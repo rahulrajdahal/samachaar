@@ -10,7 +10,7 @@
 import { useWindowSize } from '@/hooks/useWindowSize';
 
 const { width } = useWindowSize()
-type Service = { title: string, description: string }
+type Service = { id: number, title: string, description: string }
 
 defineProps<{ service: Service }>()
 </script>

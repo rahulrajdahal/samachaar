@@ -52,7 +52,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useWindowSize } from '@/hooks/useWindowSize';
 import { Square11B, Square12B, Square13B } from 'meistericons-vue-latest';
 import { RouterLink } from 'vue-router';
 
@@ -72,6 +71,4 @@ const partnerLinks = [{ id: 1, link: 'Partner1' },
 ]
 
 const socialLinks = [{ id: 1, link: Square11B }, { id: 2, link: Square12B }, { id: 3, link: Square13B },]
-
-const { width } = useWindowSize()
 </script>

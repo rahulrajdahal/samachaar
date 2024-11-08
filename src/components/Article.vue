@@ -20,8 +20,9 @@
 </template>
 
 <script lang="ts" setup>
-import { readingTime, type NewsArticle } from '@/utils';
+import { readingTime } from '@/utils';
 import { ClockCircle } from 'meistericons-vue-latest';
+import type { NewsArticle } from '@/stores/news';
 
 defineProps<{ story: NewsArticle }>()
 </script>

@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { NewsArticle } from '@/utils';
+import type { NewsArticle } from '@/stores/news';
 import Article from './Article.vue';
 import WeeklyNewsletter from './WeeklyNewsletter.vue';
 
