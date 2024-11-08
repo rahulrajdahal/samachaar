@@ -1,20 +1,17 @@
 <template>
-    <div class="py-12 bg-black text-white px-[12.5%]">
+    <div class="py-12 bg-black text-white px-4 md:px-[12.5%]">
         <div class="flex flex-col gap-2">
             <strong class="font-bold text-xl">Why visit Nepal?</strong>
             <p class="max-w-72 text-base font-medium">Here are the top 3 reasons why you should consider visit Nepal</p>
         </div>
 
-        <ul class="flex items-center gap-10 mt-8">
+        <ul class="flex flex-col md:flex-row items-center gap-5 md:gap-10 mt-8">
             <li class="flex flex-col gap-2 w-full" v-for="({ id, title, image }) in reasons" :key="id">
-                <img :src="image" :alt="title"
-                    class="aspect-square rounded-md h-full w-full object-cover max-h-[30rem]">
+                <img :src="image" :alt="title" class="aspect-square rounded-md w-full object-cover h-40 md:h-[30rem]">
                 <strong class="text-base tracking-light font-bold">{{ title }}</strong>
             </li>
         </ul>
     </div>
-
-
 </template>
 
 <script lang="ts" setup>

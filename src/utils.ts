@@ -1,4 +1,3 @@
-export type NewsArticle = { title: string, article_id: string, image_url: string, description?: string }
 
 const wordsPerMinute = 8;
 

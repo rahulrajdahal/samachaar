@@ -18,7 +18,7 @@
             </div>
 
             <div class="flex flex-col gap-8">
-                <Story v-for="story in moreArticles" :key="story.article_id" :story="story" />
+                <Article v-for="article in moreArticles" :key="article.article_id" :story="article" />
             </div>
 
         </div>
@@ -28,7 +28,7 @@
 
 <script lang="ts" setup>
 import type { NewsArticle } from '@/utils';
-import Story from './Story.vue';
+import Article from './Article.vue';
 import WeeklyNewsletter from './WeeklyNewsletter.vue';
 
 defineProps<{ moreArticles: NewsArticle[], title: string, containerClass?: string }>()

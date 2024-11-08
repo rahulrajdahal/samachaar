@@ -5,7 +5,7 @@
             <p>Kathmandu, 14 <sup>o</sup>C</p>
         </div>
 
-        <RouterLink to="/" class="text-xl md:text-4xl font-black">Samachaar</RouterLink>
+        <router-link to="/" class="text-xl md:text-4xl font-black">Samachaar</router-link>
 
         <EllipsisVCircle class="w-8" v-if="width < 768" />
         <div v-if="width > 768" class="flex gap-2">
@@ -14,11 +14,11 @@
         </div>
     </header>
     <nav class="flex items-center justify-center gap-12">
-        <RouterLink v-for="({ id, title, to }) in links" :key="id" :to="to"
+        <router-link v-for="({ id, title, to }) in links" :key="id" :to="to"
             active-class="text-blue-700 font-bold border-b border-b-4 border-blue-400"
             class="relative text-lg font-normal">
             {{ title }}
-        </RouterLink>
+        </router-link>
     </nav>
 </template>
 
